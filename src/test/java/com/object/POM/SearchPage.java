@@ -1,5 +1,7 @@
 package com.object.POM;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -27,7 +29,7 @@ public class SearchPage extends Base{
 	}
 	public String navigateSearchedPage () {
 		if(isDisplayed(SearchedItem)=="1-16 of over 7,000 results for \"phone case\"") {
-			System.out.println("Expected 1-16 of over 7,000 results for \"phone case\"");
+			System.out.println("1-16 of over 7,000 results for \"phone case\"");
 		
 			
 		}else {
