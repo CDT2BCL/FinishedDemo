@@ -1,7 +1,7 @@
 package stepDefinition;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 
 import com.object.POM.SearchPage;
 
@@ -41,5 +41,24 @@ public void user_navigates_to_searched_page() {
 	searchPage.navigateSearchedPage();
 	
 }
+@And("User verifies the boxe is unchecked")
+public void user_verifies_the_boxe_is_unchecked() {
+	searchPage.identifyBox();
+}
 
+@When("user checks the Carbon Fiber box")
+public void user_checks_the_carbon_fiber_box() {
+	searchPage.checkTheBox();		
+   
+}
+
+@And("User navigate to Carbon Fiber product")
+public void user_navigate_to_carbon_fiber_product() {
+	searchPage.UserSelects();
+
+}
+@Then("User gets products and prices")
+public void User_gets_products_and_prices() {
+	searchPage.ProductsAndPrices();
+}
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Base {
-	private WebDriver driver;
+	protected WebDriver driver;
 	
 	public Base (WebDriver driver){
 		this.driver=driver;
@@ -14,7 +14,7 @@ public class Base {
 	
 	public WebDriver chromeDriverConnection() {
 		
-		System.setProperty("webdriver.chrome.driver","C:/Users/casa/Desktop/Drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","./src/test/resources/Drver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.navigate().to("https://www.amazon.com/");
 		return driver;
