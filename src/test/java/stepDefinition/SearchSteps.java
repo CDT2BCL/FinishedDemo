@@ -37,7 +37,7 @@ searchPage.searchButton();
 }
 
 @Then("User navigates to searched page")
-public void user_navigates_to_searched_page() {
+public void user_navigates_to_searched_page() throws InterruptedException {
 	searchPage.navigateSearchedPage();
 	
 }
@@ -58,7 +58,7 @@ public void user_navigate_to_carbon_fiber_product() {
 
 }
 @Then("User gets products and prices")
-public void User_gets_products_and_prices() {
+public void User_gets_products_and_prices() throws InterruptedException {
 	searchPage.ProductsAndPrices();
 }
 }

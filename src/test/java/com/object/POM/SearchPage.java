@@ -3,6 +3,7 @@ package com.object.POM;
 import static org.junit.Assert.assertEquals;
 
 import java.awt.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,73 +21,59 @@ public class SearchPage extends Base{
 	
 	
 	public SearchPage(WebDriver driver) {
-		super(driver);
+	super(driver);
 		//Product and Price list
 		
-		
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
-
-
 	public void enterCriteria() throws InterruptedException {
-		Thread.sleep(4000);
-		type("phone case", SearchBar);
+	Thread.sleep(2000);
+	type("phone case", SearchBar);
 	}
+	
 	public void searchButton () throws InterruptedException {
-		Thread.sleep(4000);
-		click(SearchButton);
-		
-		
+	Thread.sleep(2000);
+	click(SearchButton);
 	}
-	public String navigateSearchedPage () {
-		if(isDisplayed(SearchedItem)=="1-16 of over 7,000 results for \"phone case\"") {
-			System.out.println("1-16 of over 7,000 results for \"phone case\"");
-		
-			
-		}else {
-			System.out.println(isDisplayed(SearchedItem));
-		}return "Verified";
-		
-		
-		}
+	
+	public String navigateSearchedPage () throws InterruptedException {
+	Thread.sleep(2000);
+	if(isDisplayed(SearchedItem)=="1-16 of over 7,000 results for \"phone case\"") {
+	System.out.println("1-16 of over 7,000 results for \"phone case\"");
+	}else {
+	System.out.println(isDisplayed(SearchedItem));
+	}return "Verified";
+	}
+	
 	public void identifyBox() {
-		System.out.println(getText(carbonFiberBox));
-		
-		
+	System.out.println(getText(carbonFiberBox));
 	}
-
-	public void checkTheBox() {
-		click(carbonFiberBox);
-		
-		
-		
+	
+    public void checkTheBox() {
+	click(carbonFiberBox);
 	}
 	
 	public void UserSelects() {
 	isSelected(carbonFiberBox);
-}
-	public void ProductsAndPrices () {
+    }
+	
+	public void ProductsAndPrices () throws InterruptedException {
+		Thread.sleep(2000);
 		java.util.List<WebElement> productsName = driver.findElements(products);
 		java.util.List<WebElement> prodPrice = driver.findElements(price);
 		java.util.List<WebElement> prodPriceFrac = driver.findElements(fractionOfPrice);
 		try {
-
-			for(int i=0;i<productsName.size();i++) {
-
-			if(productsName.get(i).getText().equals("Need help?")) {
-
-			productsName.remove(i);
-			}
-			System.out.println(i+". "+productsName.get(i).getText().substring(0,30)+"------Price:: $"+prodPrice.get(i).getText()+"."+prodPriceFrac.get(i).getText());
-
-			}
-
-			}
-			 catch(IndexOutOfBoundsException e) {
-
-			System.out.println("Passed ");
-			
-			}
+		for(int i=0;i<productsName.size();i++) {
+		if(productsName.get(i).getText().equals("Need help?")) {
+        productsName.remove(i);
+		}
+		System.out.println(i+". "+productsName.get(i).getText().substring(0,30)+"------Price:: $"+prodPrice.get(i).getText()+"."+prodPriceFrac.get(i).getText());
+		}
+		}
+    	catch(IndexOutOfBoundsException e) {
+        System.out.println("Passed ");
+		}
 		driver.quit();
 		
 	}
