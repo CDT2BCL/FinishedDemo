@@ -42,18 +42,18 @@ public void user_navigates_to_searched_page() throws InterruptedException {
 	
 }
 @And("User verifies the boxe is unchecked")
-public void user_verifies_the_boxe_is_unchecked() {
+public void user_verifies_the_boxe_is_unchecked() throws InterruptedException {
 	searchPage.identifyBox();
 }
 
 @When("user checks the Carbon Fiber box")
-public void user_checks_the_carbon_fiber_box() {
+public void user_checks_the_carbon_fiber_box() throws InterruptedException {
 	searchPage.checkTheBox();		
    
 }
 
 @And("User navigate to Carbon Fiber product")
-public void user_navigate_to_carbon_fiber_product() {
+public void user_navigate_to_carbon_fiber_product() throws InterruptedException {
 	searchPage.UserSelects();
 
 }

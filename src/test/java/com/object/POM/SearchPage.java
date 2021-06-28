@@ -23,22 +23,22 @@ public class SearchPage extends Base{
 	public SearchPage(WebDriver driver) {
 	super(driver);
 		//Product and Price list
-		
-	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+	
 	}
 	
 	public void enterCriteria() throws InterruptedException {
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	type("phone case", SearchBar);
 	}
 	
 	public void searchButton () throws InterruptedException {
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	click(SearchButton);
 	}
 	
 	public String navigateSearchedPage () throws InterruptedException {
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	if(isDisplayed(SearchedItem)=="1-16 of over 7,000 results for \"phone case\"") {
 	System.out.println("1-16 of over 7,000 results for \"phone case\"");
 	}else {
@@ -46,15 +46,18 @@ public class SearchPage extends Base{
 	}return "Verified";
 	}
 	
-	public void identifyBox() {
+	public void identifyBox() throws InterruptedException {
+		Thread.sleep(1000);
 	System.out.println(getText(carbonFiberBox));
 	}
 	
-    public void checkTheBox() {
+    public void checkTheBox() throws InterruptedException {
+    	Thread.sleep(1000);
 	click(carbonFiberBox);
 	}
 	
-	public void UserSelects() {
+	public void UserSelects() throws InterruptedException {
+		Thread.sleep(1000);
 	isSelected(carbonFiberBox);
     }
 	

@@ -14,7 +14,7 @@ public class Base {
 	
 	public WebDriver chromeDriverConnection() {
 		
-		System.setProperty("webdriver.chrome.driver","./src/test/resources/Drver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:/Users/casa/Desktop/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.navigate().to("https://www.amazon.com/");
 		return driver;
